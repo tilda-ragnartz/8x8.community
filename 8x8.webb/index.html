@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>8X8.COMMUNITY</title>
+	<meta charset="UTF-8">
+ 	<meta name="description" content="8X8 chess community">
+  	<meta name="keywords" content="8x8, chess, tilda">
+  	<meta name="author" content="Tilda Ragnartz and Gabriel Fager Ferrari">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+
+
+</head>
+<body onload="getLocation();" lang="en">
+
+	<video autoplay muted loop id="myVideo">
+  	<source src="flags.mov" type="video/mp4">
+	</video>
+
+	<div id="container">
+
+	<header>
+
+		<div id="left">
+			<div id="box2"></div>
+			<div id="box3"><div class="line"></div></div>
+			<div id="box4"><div class="line"></div></div>
+			<div id="box5"></div>
+		</div>
+	
+		<div id="right">
+			<div id="box02"></div>
+			<div id="box03"><div class="line"></div></div>
+			<div id="box04"><div class="line"></div></div>
+			<div id="box05"></div>
+		</div>
+
+	</header>
+
+		<div id="box6">
+		<p>8X8.COMMUNITY <br/> PUBLIC CHESS CLUB <br/> 59°19’55.331” <br/> 18°3’53.195”</p>		
+		<h2 id="long"></h2>
+		</div>
+		
+		<div id="box7">
+		<h2 id="lat"></h2>
+		<h3 id="error">Welcome to the community of 8X8, where everyone is a member. In order to become an active member and to get full access to the community please visit the correct coordinates of the House of Culture in Stockholm. (59°19’55.331”, 18°3’53.195”).</h3>
+
+		<a href="access.html"><h3 id="welcome">PRESS HERE TO ACCESS</h3></a>
+		</div> 
+
+	</div>
+
+
+
+
+	<script type="text/javascript">
+
+		var welcome = document.querySelector('#welcome'); // getElementById() also works
+		var error = document.querySelector('#error');
+
+		// change this to the final destination
+		var destination = {
+			lon: 18.0645371,
+			lat: 59.3320289
+		};
+		var accessDistance = 0.2; // amount of kilometers user must be within to access
+		window.navigator.geolocation.getCurrentPosition(function(pos) {
+			var lon = pos.coords.longitude;
+			var lat = pos.coords.latitude;
+			var dist = distance(lon, lat, destination.lon, destination.lat);
+			//alert(`Current lon: ${lon} lat: ${lat}. You are ${dist} km away from your destination!`);
+			if (dist < accessDistance){
+				welcome.style.display = 'block';
+			} else {
+				error.style.display = 'block';
+			}
+		});
+		function distance(lon1, lat1, lon2, lat2) {
+			var R = 6371;
+			var dLat = (lat2 - lat1).toRad();
+			var dLon = (lon2 - lon1).toRad();
+			var a =
+				Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+				Math.cos(lat1.toRad()) *
+					Math.cos(lat2.toRad()) *
+					Math.sin(dLon / 2) *
+					Math.sin(dLon / 2);
+			var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+			var d = R * c;
+			return d;
+		}
+		
+		if (typeof Number.prototype.toRad === 'undefined') {
+			Number.prototype.toRad = function() {
+				return (this * Math.PI) / 180;
+			};
+		}
+  
+
+
+
+	var x = document.getElementById("long");
+	var y = document.getElementById("lat");
+
+	function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    	}
+	}
+
+	function showPosition(position) {
+    x.innerHTML =  position.coords.latitude;
+    y.innerHTML =  position.coords.longitude;
+	}
+
+
+
+
+	</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>8X8.COMMUNITY</title>
+	<meta charset="UTF-8">
+ 	<meta name="description" content="8X8 chess community">
+  	<meta name="keywords" content="8x8, chess, tilda">
+  	<meta name="author" content="Tilda Ragnartz and Gabriel Fager Ferrari">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+   
+    $(document).ready(function(){
+
+    // Select all links with hashes
+	$('a[href*="#"]')
+  	// Remove links that don't actually link to anything
+  	.not('[href="#"]')
+  	.not('[href="#0"]')
+  	.click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+      
+      
+    });
+  </script>
+
+</head>
+<body lang="en">
+
+	<video autoplay muted loop id="myVideo">
+  	<source src="flags.mov" type="video/mp4">
+	</video>
+	
+	<div id="container">
+		
+	<header>
+		
+		<div id="left">
+			<div id="box2"></div>
+			<div id="box3"><div class="line"></div></div>
+			<div id="box4"><div class="line"></div></div>
+			<div id="box5"></div>
+		</div>
+		
+	
+		<div id="right"><div class="line"></div>
+			<div id="box02"></div>
+			<div id="box03"></div>
+			<div id="box04"></div>
+			<div id="box05"></div>
+		</div>
+
+
+
+	</header>
+
+		<div id="box6">
+		<p>8X8.COMMUNITY <br/> PUBLIC CHESS CLUB <br/> 59°19’55.331” <br/> 18°3’53.195”</p>	
+		<h2>YOU ARE NOW AN <br/> ACTIVE MEMBER</h2>
+		</div>
+		
+		<div id="box7">
+		<p>Built upon the passion and initiative of playing chess in The House of Culture, the community of 8X8 strongly believes in the importance of chess as a tool for removing mental barriers that limit our interaction. It is a secure place for cross-border interaction with everyone, where mutual respect is key.</p>
+		<a href="#first"><h3>EXPLORE THE COMMUNITY</h3></a>
+		</div>
+		
+	
+	<!--DIVIDER-->
+		<div class=divider></div>
+		<div class=divider><div class="line"></div></div>
+		<div class=divider></div>
+		<div class=divider-end><div class="line"></div></div>
+
+
+
+	<!--MENY-->
+
+		<a href="#social"><div class="meny">
+		<p>A1</p>
+		<h2>SOCIAL GUIDE</h2>
+		</div></a>
+
+		<a href="#manifest"><div class="meny-right">
+		<p>B2</p>
+		<h2>MANIFEST</h2>
+		</div></a>
+
+		<a href="#mentor"><div class="meny">
+		<p>C3</p>
+		<h2>BE A MENTOR</h2>
+		</div></a>
+
+		<a href="#shop"><div class="meny-right">
+		<p>C4</p>
+		<h2>SHOP/<br/>SUPPORT</h2>
+		</div></a>
+
+		<!--DIVIDER-->
+
+		<div class=divider2></div>
+		<div class=divider2><div class="line"></div></div>
+		<div class=divider2></div>
+		<div class=divider-end-2><div class="line"></div></div>
+
+		<!--SOCIAL GUIDE-->
+
+		
+		<div class="intro-top" id="social" >
+		<p>A1<br/>SOCIAL GUIDE</p>
+		</div>
+
+		<div class="intro-bottom">
+		<p>This is your social guide how to enjoy a day of chess at the community. Remember that everyone is welcome.</p>
+		<h3>SOCIAL GUIDE</h3>
+		</div>
+
+		<div class="social-guide"><div class="line"></div>
+		</div>
+
+		<div class="social-guide-right">
+			<h2>FIND</h2>
+			<p>At first sight The House of Culture can seem like a massive place to find your way around. Take your time. You will find the community at floor 02.</p>
+		</div>
+
+		<div class="social-guide">
+			<h2>WATCH</h2>
+			<p>Is it crowded right now? Have a seat at someone else’s game. Half of the fun is just watching other play, you will sure learn a lot and maybe you can play the next round.</p>
+		</div>
+
+		<div class="social-guide-right"><div class="line"></div>
+		</div>
+
+		<div class="social-guide"><div class="line"></div>
+		</div>
+
+		<div class="social-guide-right">
+			<h2>INTERACT</h2>
+			<p>Sometimes the chess games can look a bit tense, but rest assure no one will blaming you for interacting. 8X8 is based on new meeting, so take a deep breath and try to get eye contact with someone nice.</p>
+		</div>
+
+		<div class="social-guide">
+			<h2>TALK</h2>
+			<p>The first sentence is often the hardest. But then it will flow like water. If your conversation topics are out you can always fall back on the game.</p>
+		</div>
+
+		<div class="social-guide-right"><div class="line"></div>
+		</div>
+
+		<div class="social-guide"><div class="line"></div>
+		</div>
+
+		<div class="social-guide-right">
+			<h2>PLAY</h2>
+			<p>Not sure of the rules? Ask someone. They will be more than glad to help you out. Especially the ones with the Mentor badge. It indicates that they are volunteering as a guide for everyone at the community.</p>
+		</div>
+
+		<!--SMALLMENY-->
+
+		<a href="#social"><div class="smal-meny" >
+			<p>SOCIAL <br/> GUIDE</p>
+			<h2>A1</h2>
+		</div></a>
+
+		<a href="#manifest"><div class="smal-meny" id="manifest">
+			<p>MANIFEST</p>
+			<h2>B2</h2>
+		</div></a>
+
+		<a href="#mentor"><div class="smal-meny">
+			<p>BE A <br/> MENTOR</p>
+			<h2>C3</h2>
+		</div></a>
+
+		<a href="#shop"><div class="smal-meny-end">
+			<p>SHOP/<br/>SUPPORT</p>
+			<h2>C4</h2>
+		</div></a>
+
+
+
+		<!--MANIFEST-->
+
+		<div class="intro-top">
+		<p>B2<br/>MANIFEST</p>
+		</div>
+
+		<div class="intro-bottom">
+		<p>This is the heart of the community, our manifest. Please read, respect and live by it.</p>
+		<h3>MANIFEST</h3>
+		</div>
+
+		<div id="manifest-content">
+			<p>The community of 8X8 strongly believes in the human ability of interaction and communication, and in the importance of chess as a tool. We believe it can remove mental barriers that limit our interaction, and instead help us gain more approval and acceptance towards each other.</p>
+			<br/>
+			<p>The community of 8X8 will always be a secure place for cross-border interactions between everyone.</p>
+			<br/>
+			<p>Regardless of gender, ethnicity or demographic affiliation, everyone is a member. In order to become an active member the correct coordinates must be visited.</p>
+
+			<p>Acceptance and respect is valued higher than skill and prior knowledge. The community believes that everyone always has something to teach and someone to learn from.</p>
+			<br/>
+			<p>A membership in the community of 8X8 is, and will always be free of charge. However, a symbolic financial donation in the shape of handsome merchandise will always be available at the SHOP/SUPPORT.</p>
+			<br/>
+			<p>In addition to the general human and social responsibility, the community of 8X8 strives to maintain the open-minded and humane ideology that the House of Culture was built upon.</p>
+
+		</div>
+
+		<!--SMALLMENY-->
+
+		<a href="#social"><div class="smal-meny">
+		<p>SOCIAL <br/> GUIDE</p>
+		<h2>A1</h2>
+		</div></a>
+
+		<a href="#manifest"><div class="smal-meny">
+		<p>MANIFEST</p>
+		<h2>B2</h2>
+		</div></a>
+
+		<a href="#mentor"><div class="smal-meny" id="mentor">
+		<p>BE A <br/> MENTOR</p>
+		<h2>C3</h2>
+		</div></a>
+
+		<a href="#shop"><div class="smal-meny-end">
+		<p>SHOP/<br/>SUPPORT</p>
+		<h2>C4</h2>
+		</div></a>
+
+		<!--MENTOR-->
+
+		<div class="intro-top">
+		<p>C3<br/>BE A MENTOR</p>
+		</div>
+
+		<div class="intro-bottom">
+		<p>Are you a frequent active member? By getting the mentor badge everyone in the community can ask for your advice and guidance. Thanks to you the community will stay secure and friendly.</p>
+		<h3>BE A MENTOR</h3>
+		</div>
+
+		<div class="mentor-content"><div class="line"></div>
+		</div>
+
+		<a href="mailto:mentor@8x8.community?Subject=Sign%20Up" target="_top">
+		<div class="mentor-content-end">
+		<h2>PRESS HERE TO SIGN UP</h2>
+		</div></a>
+
+		<div class="mentor-content">
+		<img src="assets/pin_mentor.png" style: width="100%"></img>
+		</div>
+
+		<div class="mentor-content"><div class="line"></div>
+		</div>
+
+
+		<!--SMALLMENY-->
+
+		<a href="#social"><div class="smal-meny">
+		<p>SOCIAL <br/> GUIDE</p>
+		<h2>A1</h2>
+		</div></a>
+
+		<a href="#manifest"><div class="smal-meny">
+		<p>MANIFEST</p>
+		<h2>B2</h2>
+		</div></a>
+
+		<a href="#mentor"><div class="smal-meny">
+		<p>BE A <br/> MENTOR</p>
+		<h2>C3</h2>
+		</div></a>
+
+		<a href="#shop"><div class="smal-meny-end"  id="shop">
+		<p>SHOP/<br/>SUPPORT</p>
+		<h2>C4</h2>
+		</div></a>
+
+		<!--SHOP/SUPPORT-->
+
+		<div class="intro-top">
+		<p>D4<br/>SHOP/SUPPORT</p>
+		</div>
+
+		<div class="intro-bottom">
+		<p>Support the community by representing it with the latest merchandise. Besides from production costs, all financial support will be reinvested in the community.</p>
+		<h3>SHOP/SUPPORT</h3>
+		</div>
+
+		<a href="mailto:order@8x8.community?Subject=T-SHIRT%20OUT%20OF%20STOCK" target="_top">
+		<div class="shop-support">
+		<img src="assets/shop_shirt.png" style="width: 100%;">
+		</div>
+
+		<div class="shop-support-right">
+		<h2>ORDER </br> T-SHIRT</h2>
+		<p>AVAILABLE SIZES: <br/> XS S M L XL</p>
+		</div></a>
+
+		<a href="mailto:order@8x8.community?Subject=PIN%20OUT%20OF%20STOCK" target="_top">
+		<div class="shop-support">
+		<h2>ORDER<br/>PIN</h2>
+		<p>AVAILABLE COLORS: <br/> COMMUNITY COLORS/<br/>CHESS PATTERN</p>
+		</div>
+
+		<div class="shop-support-right">
+		<img src="assets/shop_pin.png" style="width: 100%;">
+		</div></a>
+
+		<a href="mailto:order@8x8.community?Subject=CAP%20OUT%20OF%20STOCK" target="_top">
+		<div class="shop-support">
+		<img src="assets/shop_kepa.png" style="width: 100%;">
+		</div>
+
+		<div class="shop-support-right">
+		<h2>ORDER CAP</h2>
+		<p>AVAILABLE SIZES: <br/> SMALL/LARGE</p>
+		</div></a>
+
+		<a href="mailto:order@8x8.community?Subject=KEYCHAIN%20OUT%20OF%20STOCK" target="_top"><div class="shop-support">
+		<h2>ORDER<br/>KEYCHAIN</h2>
+		<p>AVAILABLE COLORS: <br/> COMMUNITY COLORS/<br/>CHESS PATTERN</p>
+		</div>
+
+		<div class="shop-support-right">
+		<img src="assets/shop_keychain.png" style="width: 100%;">
+		</div></a>
+
+		<!--DIVIDER-->
+
+		<div class=divider></div>
+		<div class=divider><div class="line"></div></div>
+		<a href="#left"><div class=divider-end-3> <p>BACK TO TOP</p></div></a>
+
+</div>
+
+</body>
+</html>
