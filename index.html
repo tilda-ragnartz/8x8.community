@@ -41,12 +41,12 @@
 
 		<div id="box6">
 		<p>8X8.COMMUNITY <br/> PUBLIC CHESS CLUB <br/> 59°19’55.331” <br/> 18°3’53.195”</p>		
-		<h2 id="long"></h2>
+		<h2>59°19’55.331”</h2>
 		</div>
 		
 		<div id="box7">
-		<h2 id="lat"></h2>
-		<h3 id="error">Welcome to the community of 8X8, where everyone is a member. In order to become an active member and to get full access to the community please visit the correct coordinates of the House of Culture in Stockholm. (59°19’55.331”, 18°3’53.195”).</h3>
+		<h2>18°3’53.195”</h2>
+		<p>Welcome to the community of 8X8, where everyone is a member. In order to become an active member and to get full access to the community please visit the correct coordinates of the House of Culture in Stockholm.</p>
 
 		<a href="access.html"><h3 id="welcome">PRESS HERE TO ACCESS</h3></a>
 		</div> 
@@ -66,7 +66,7 @@
 			lon: 18.0645371,
 			lat: 59.3320289
 		};
-		var accessDistance = 0.2; // amount of kilometers user must be within to access
+		var accessDistance = 1; // amount of kilometers user must be within to access
 		window.navigator.geolocation.getCurrentPosition(function(pos) {
 			var lon = pos.coords.longitude;
 			var lat = pos.coords.latitude;
@@ -102,21 +102,21 @@
 
 
 
-	var x = document.getElementById("long");
-	var y = document.getElementById("lat");
+	//var x = document.getElementById("long");
+	//var y = document.getElementById("lat");
 
-	function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    	}
-	}
+	//function getLocation() {
+    //if (navigator.geolocation) {
+      //  navigator.geolocation.getCurrentPosition(showPosition);
+    //} else { 
+      //  x.innerHTML = "Geolocation is not supported by this browser.";
+    //	}
+//	}
 
-	function showPosition(position) {
-    x.innerHTML =  position.coords.latitude;
-    y.innerHTML =  position.coords.longitude;
-	}
+	//function showPosition(position) {
+    //x.innerHTML =  position.coords.latitude;
+    //y.innerHTML =  position.coords.longitude;
+	//}
 
 
 
